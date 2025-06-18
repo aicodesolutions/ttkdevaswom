@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TTK Devaswom</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">TTK Devaswom</a>
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="worship.html">Worship</a></li>
+                    <li><a href="offerings.html">Offerings</a></li>
+                    <li><a href="visit.html">Visit</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title-section">
+            <div class="container">
+                <h1>Contact Information</h1>
+            </div>
+        </section>
+
+        <section id="contact-details" class="container section-padding">
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <h2>Get in Touch</h2>
+                    <p>We are here to assist you. Please feel free to contact us for any inquiries, bookings, or information.</p>
+                    
+                    <h4>Temple Office:</h4>
+                    <p><strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">[+91-XXX-XXXXXXX]</a>, <a href="tel:+91YYYYYYYYYY">[+91-YYY-YYYYYYY]</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@ttkdevawom">[info@ttkdevawom] (use domain name from input)</a></p>
+                    <!-- TODO: Replace XXXXX and YYYYY with actual phone numbers. Update email with correct one based on ttkdevawom domain. -->
+                    
+                    <h4>Address:</h4>
+                    <p>[Street Address Line 1]</p>
+                    <p>[City/Town], [State] - [Postal Code]</p>
+                    <p>(Refer to <a href="location.html">Location page</a> for detailed address and map)</p>
+                    <!-- TODO: Fill in the address details. -->
+
+                    <h4>Office Hours:</h4>
+                    <p>[e.g., Monday to Saturday: 9:00 AM - 6:00 PM]</p>
+                    <p>[e.g., Sunday: 9:00 AM - 1:00 PM (or Closed)]</p>
+                     <!-- TODO: Fill in office hours. -->
+                </div>
+
+                <div class="contact-info-box">
+                    <h4>Emergency Contacts:</h4>
+                    <p><strong>Temple Security:</strong> <a href="tel:+91ZZZZZZZZZZ">[+91-ZZZ-ZZZZZZ]</a></p>
+                    <p><strong>Local Police Station:</strong> [Local Police Phone Number]</p>
+                    <p><strong>Nearest Hospital:</strong> [Hospital Name & Phone Number]</p>
+                    <!-- TODO: Provide relevant emergency contact numbers. -->
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback-form" class="container section-padding">
+            <h2>Send Us a Message / Feedback</h2>
+            <form action="#" method="POST" class="contact-form">
+                <!-- Note: This is a front-end form structure only. Backend processing is required for it to function. -->
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Inquiry:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+                <!-- TODO: Implement backend form processing for this form to be functional. -->
+            </form>
+        </section>
+
+        <section id="faq" class="container section-padding">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <h4>[Question 1: e.g., What is the dress code for visiting the temple?]</h4>
+                <p>[Answer 1: e.g., Traditional Indian attire is recommended. Please refer to our Visitor Guidelines on the Worship page for more details.]</p>
+            </div>
+            <div class="faq-item">
+                <h4>[Question 2: e.g., Can I book pujas online?]</h4>
+                <p>[Answer 2: e.g., We are currently working on an online puja booking system. For now, please contact the temple office for bookings. Refer to the Offerings page.]</p>
+            </div>
+            <div class="faq-item">
+                <h4>[Question 3: e.g., Is photography allowed inside the temple?]</h4>
+                <p>[Answer 3: e.g., Photography is restricted in the sanctum sanctorum. Please look for signages or ask temple staff for guidance.]</p>
+            </div>
+            <div class="faq-item">
+                <h4>[Question 4: e.g., Are there accommodation facilities at the temple?]</h4>
+                <p>[Answer 4: e.g., Please check the Visit Planning page for information on temple guesthouses (if any) and nearby accommodation options.]</p>
+            </div>
+            <!-- TODO: Add more relevant FAQs and their answers. -->
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> TTK Devaswom. All Rights Reserved.</p>
+            <p>
+                <a href="contact.html">Contact Us</a> | <a href="#">Privacy Policy (Placeholder)</a> | <a href="#">Terms of Service (Placeholder)</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script></body>
+</html>

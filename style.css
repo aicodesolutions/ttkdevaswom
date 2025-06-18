@@ -1,0 +1,540 @@
+/* Global Resets & Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #4A3B31; /* Dark Brown Text */
+    background-color: #FAF3E0; /* Light Cream/Beige Background */
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #C06014; /* Warm Orange/Saffron */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E87A00; /* Brighter Saffron for hover */
+    text-decoration: underline;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    color: #8B4513; /* Darker Brown for Headings */
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8em; text-align: center; margin-top: 20px;}
+h2 { font-size: 2.2em; border-bottom: 2px solid #D3B89E; padding-bottom: 0.3em; margin-bottom: 1em;}
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; color: #C06014; }
+
+p {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #fff; /* White header background */
+    padding: 1em 0;
+    border-bottom: 3px solid #C06014; /* Saffron border */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #8B4513;
+    text-decoration: none;
+}
+.logo:hover {
+    color: #C06014;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+    margin-bottom: 0; /* Override general li margin */
+}
+
+.nav-links a {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #4A3B31;
+    padding: 0.5em 0;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #C06014;
+    font-weight: bold;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #C06014;
+    transition: width .3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #4A3B31;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Main Content Sections */
+main {
+    padding-top: 20px; /* Space below sticky header */
+}
+
+.section-padding {
+    padding: 40px 0;
+}
+
+.page-title-section {
+    background-color: #E8D8C3; /* Lighter earthy tone */
+    padding: 30px 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.page-title-section h1 {
+    margin-bottom: 0;
+    color: #8B4513;
+}
+
+
+/* Hero Section (Homepage) */
+.hero {
+    background: url('https://via.placeholder.com/1500x600.png?text=Temple+Background+Silhouette') no-repeat center center/cover; /* Placeholder background */
+    /* TODO: Replace with an actual subtle temple-themed background image or gradient */
+    background-color: #E8D8C3; /* Fallback color */
+    color: #4A3B31;
+    text-align: center;
+    padding: 60px 20px;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: #8B4513;
+}
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
+.hero-image {
+    margin: 20px auto;
+    max-width: 100%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.quick-links {
+    margin-top: 30px;
+}
+.quick-links .btn {
+    margin: 0 10px;
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #C06014; /* Saffron */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #E87A00; /* Brighter Saffron */
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Cards (for announcements, offerings, etc.) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #D3B89E; /* Light earthy border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.card h3 {
+    margin-top: 0;
+    color: #8B4513;
+}
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 15px;
+}
+.learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Event Items (Homepage, Worship Page) */
+.event-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #C06014;
+    border-radius: 0 5px 5px 0;
+}
+.event-item h4 { margin-top: 0; }
+
+/* Content Sections with Images */
+.content-section p {
+    margin-bottom: 1.2em;
+}
+.content-image-left {
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    max-width: 45%;
+    border-radius: 5px;
+    border: 3px solid #D3B89E;
+}
+.content-image-right {
+    float: right;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    max-width: 45%;
+    border-radius: 5px;
+    border: 3px solid #D3B89E;
+}
+.content-image-center {
+    display: block;
+    margin: 0 auto 25px auto;
+    max-width: 70%;
+    border-radius: 5px;
+    border: 3px solid #D3B89E;
+}
+.content-section::after { /* Clearfix for floated images */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #D3B89E;
+    transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Schedule Table (Worship Page, Offerings Page) */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.schedule-table th, .schedule-table td {
+    border: 1px solid #D3B89E;
+    padding: 12px;
+    text-align: left;
+}
+.schedule-table th {
+    background-color: #E8D8C3; /* Lighter earthy tone for header */
+    color: #8B4513;
+    font-family: 'Lora', serif;
+}
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #FDFBF5; /* Very light cream for alternate rows */
+}
+
+/* Directions Grid (Location Page) */
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.directions-grid article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #C06014;
+}
+
+/* Contact Page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+.contact-info-box {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #D3B89E;
+}
+.contact-info-box h4 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.contact-info-box p {
+    margin-bottom: 0.5em;
+}
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #D3B89E;
+    margin-top: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #8B4513;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D3B89E;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #D3B89E;
+}
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.faq-item h4 {
+    cursor: pointer; /* Optional: if you add JS for toggle */
+}
+
+/* Footer */
+footer {
+    background-color: #4A3B31; /* Dark Brown Footer */
+    color: #FAF3E0; /* Light Cream Text */
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+footer .container p {
+    margin-bottom: 0.5em;
+}
+footer a {
+    color: #E8D8C3; /* Light earthy tone for links in footer */
+}
+footer a:hover {
+    color: #fff;
+}
+.social-links a {
+    margin: 0 8px;
+    font-size: 1.2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .logo { font-size: 1.5em; }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        background-color: #fff;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active { /* Class added by JS to show menu */
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .nav-links a::after { /* Remove underline animation for mobile stacked menu */
+        display: none;
+    }
+
+    .hero h1 { font-size: 2.5em; }
+    .hero p { font-size: 1.1em; }
+    .quick-links .btn { margin-bottom: 10px; display: block; }
+
+    .content-image-left,
+    .content-image-right,
+    .content-image-center {
+        float: none;
+        max-width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    .card-grid, .directions-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+    
+    .schedule-table th, .schedule-table td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    .schedule-table {
+        font-size: 0.85em; /* Make table text smaller to fit */
+    }
+     /* Force table to not be like tables, and instead behave like "blocks" */
+    .schedule-table thead { display: none; }
+    .schedule-table tr {
+        display: block;
+        margin-bottom: 0.625em;
+        border: 1px solid #D3B89E;
+    }
+    .schedule-table td {
+        display: block;
+        text-align: right;
+        border: none;
+        border-bottom: 1px dotted #D3B89E;
+    }
+    .schedule-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #8B4513;
+    }
+    .schedule-table td:last-child { border-bottom: 0; }
+
+
+}
+
+@media (max-width: 480px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2em; }
+    .hero h1 { font-size: 2em; }
+    .hero p { font-size: 1em; }
+    .btn { padding: 10px 20px; font-size: 0.9em;}
+}
