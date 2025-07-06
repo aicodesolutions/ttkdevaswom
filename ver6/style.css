@@ -1,12 +1,12 @@
 /* Global Resets & Basic Styles */
 :root {
-    /* Color Palette: Classic Red & White (Light Mode) */
-    --primary-color: #D94446;       /* A strong red for primary actions and links */
-    --primary-darker: #B33032;       /* A darker red for hover states */
+    /* Color Palette: Classic Light & Professional (Reversed) */
+    --primary-color: #005A9C;       /* A strong, professional blue for main actions */
+    --primary-darker: #004A80;       /* A darker blue for hover states */
     --surface-color: #FFFFFF;       /* Pure white for surfaces like cards and headers */
-    --text-primary: #333333;         /* A dark charcoal for high readability */
+    --text-primary: #212529;         /* A standard dark charcoal for high readability */
     --text-light: #FFFFFF;           /* Pure white for text on colored backgrounds (e.g., buttons) */
-    --background-color: #FDF8F8;     /* A very light, warm off-white background */
+    --background-color: #F8F9FA;     /* A clean, off-white for the main background */
 }
 
 * {
@@ -23,10 +23,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-image: linear-gradient(rgba(253, 248, 248, 0.9), rgba(253, 248, 248, 0.9)), url('../images/raja.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: var(--background-color);
     font-size: 16px;
 }
 
@@ -176,14 +173,13 @@ main {
 }
 
 .page-title-section {
-    background-color: var(--primary-color);
+    background-color: var(--surface-color);
     padding: 30px 0;
     margin-bottom: 30px;
     text-align: center;
 }
 .page-title-section h1 {
     margin-bottom: 0;
-    color: var(--text-light);
 }
 
 /* Buttons */

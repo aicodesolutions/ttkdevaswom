@@ -1,13 +1,12 @@
 /* Global Resets & Basic Styles */
 :root {
-    /* Color Palette: Calm & Peaceful Tones */
-    --primary-orange: #5C6B73;       /* A muted, calming slate blue for actions/links */
-    --darker-orange: #4A5759;        /* A darker slate for hover states */
-    --lighter-orange: #E0E5E9;       /* A very light, soft grey-blue for borders */
-    --accent-yellow: #9DBF9E;        /* A gentle sage green for highlights */
-    --dark-text: #343A40;          /* A dark charcoal for high readability */
-    --light-text: #FFFFFF;          /* Pure white for text on dark backgrounds */
-    --background-color: #F8F9FA;    /* A clean, off-white for the main background */
+    /* Color Palette: Deep Blue & Gold (Dark Mode) */
+    --primary-color: #FFC72C;       /* Golden yellow for primary actions and links */
+    --primary-darker: #E6B327;       /* Darker gold for hover states */
+    --surface-color: #172a46;       /* A distinct navy for surfaces like cards and headers */
+    --text-primary: #CCD6F6;         /* The primary, light text color for high readability */
+    --text-light: #0A192F;           /* Deep navy for text on accent backgrounds (e.g., buttons) */
+    --background-color: #0A192F;     /* Deepest navy blue for the main background */
 }
 
 * {
@@ -23,7 +22,7 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-    color: var(--dark-text);
+    color: var(--text-primary);
     background-color: var(--background-color);
     font-size: 16px;
 }
@@ -42,27 +41,27 @@ img {
 }
 
 a {
-    color: var(--primary-orange);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--darker-orange);
+    color: var(--primary-darker);
     text-decoration: underline;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
-    color: var(--dark-text);
+    color: var(--text-primary);
     margin-bottom: 0.75em;
     line-height: 1.3;
 }
 
-h1 { font-size: 2.8em; text-align: center; margin-top: 20px;}
-h2 { font-size: 2.2em; border-bottom: 2px solid var(--lighter-orange); padding-bottom: 0.3em; margin-bottom: 1em;}
+h1 { font-size: 2.8em; text-align: center; margin-top: 20px; color: var(--primary-color); }
+h2 { font-size: 2.2em; border-bottom: 2px solid var(--surface-color); padding-bottom: 0.3em; margin-bottom: 1em;}
 h3 { font-size: 1.8em; }
-h4 { font-size: 1.4em; color: var(--accent-yellow); }
+h4 { font-size: 1.4em; color: var(--primary-color); }
 
 p {
     margin-bottom: 1em;
@@ -79,9 +78,9 @@ li {
 
 /* Header & Navigation */
 header {
-    background-color: var(--light-text);
+    background-color: var(--surface-color);
     padding: 1em 0;
-    border-bottom: 3px solid var(--primary-orange);
+    border-bottom: 3px solid var(--primary-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -98,11 +97,11 @@ header .container {
     font-family: 'Lora', serif;
     font-size: 1.8em;
     font-weight: bold;
-    color: var(--dark-text);
+    color: var(--text-primary);
     text-decoration: none;
 }
 .logo:hover {
-    color: var(--primary-orange);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -119,14 +118,14 @@ header .container {
 .nav-links a {
     font-size: 1.1em;
     text-decoration: none;
-    color: var(--dark-text);
+    color: var(--text-primary);
     padding: 0.5em 0;
     position: relative;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-orange);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -135,7 +134,7 @@ header .container {
     display: block;
     width: 0;
     height: 2px;
-    background: var(--primary-orange);
+    background: var(--primary-color);
     transition: width .3s;
     position: absolute;
     bottom: 0;
@@ -159,7 +158,7 @@ header .container {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--dark-text);
+    background-color: var(--text-primary);
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
@@ -174,21 +173,20 @@ main {
 }
 
 .page-title-section {
-    background-color: var(--lighter-orange);
+    background-color: var(--surface-color);
     padding: 30px 0;
     margin-bottom: 30px;
     text-align: center;
 }
 .page-title-section h1 {
     margin-bottom: 0;
-    color: var(--dark-text);
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    background-color: var(--primary-orange);
-    color: var(--light-text);
+    background-color: var(--primary-color);
+    color: var(--text-light);
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
@@ -200,8 +198,8 @@ main {
 }
 
 .btn:hover {
-    background-color: var(--darker-orange);
-    color: var(--light-text);
+    background-color: var(--primary-darker);
+    color: var(--text-light);
     text-decoration: none;
     transform: translateY(-2px);
 }
@@ -215,8 +213,8 @@ main {
 }
 
 .card {
-    background-color: var(--light-text);
-    border: 1px solid var(--lighter-orange);
+    background-color: var(--surface-color);
+    border: 1px solid var(--surface-color);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -228,7 +226,7 @@ main {
 }
 .card h3 {
     margin-top: 0;
-    color: var(--dark-text);
+    color: var(--text-primary);
 }
 
 /* Content Sections with Images */
@@ -238,7 +236,7 @@ main {
     margin-bottom: 15px;
     max-width: 45%;
     border-radius: 5px;
-    border: 3px solid var(--lighter-orange);
+    border: 3px solid var(--surface-color);
 }
 .content-image-right {
     float: right;
@@ -246,14 +244,14 @@ main {
     margin-bottom: 15px;
     max-width: 45%;
     border-radius: 5px;
-    border: 3px solid var(--lighter-orange);
+    border: 3px solid var(--surface-color);
 }
 .content-image-center {
     display: block;
     margin: 0 auto 25px auto;
     max-width: 70%;
     border-radius: 5px;
-    border: 3px solid var(--lighter-orange);
+    border: 3px solid var(--surface-color);
 }
 .content-section::after {
     content: "";
@@ -268,18 +266,18 @@ main {
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: var(--light-text);
+    background-color: var(--surface-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 .schedule-table th, .schedule-table td,
 .pricing-table th, .pricing-table td {
-    border: 1px solid var(--lighter-orange);
+    border: 1px solid var(--surface-color);
     padding: 12px;
     text-align: left;
 }
 .schedule-table th, .pricing-table th {
-    background-color: var(--lighter-orange);
-    color: var(--dark-text);
+    background-color: var(--surface-color);
+    color: var(--text-primary);
     font-family: 'Lora', serif;
 }
 .schedule-table tbody tr:nth-child(even),
@@ -297,8 +295,8 @@ main {
 
 /* Footer */
 footer {
-    background-color: var(--dark-text);
-    color: var(--background-color);
+    background-color: var(--surface-color);
+    color: var(--text-primary);
     text-align: center;
     padding: 30px 0;
     margin-top: 40px;
@@ -308,10 +306,10 @@ footer .container p {
     margin-bottom: 0.5em;
 }
 footer a {
-    color: var(--lighter-orange);
+    color: var(--primary-color);
 }
 footer a:hover {
-    color: var(--light-text);
+    color: var(--text-primary);
 }
 
 /* Responsive Styles */
@@ -333,7 +331,7 @@ footer a:hover {
         position: absolute;
         top: 70px;
         left: 0;
-        background-color: var(--light-text);
+        background-color: var(--surface-color);
         padding: 10px 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -377,14 +375,14 @@ footer a:hover {
     .pricing-table tr {
         display: block;
         margin-bottom: 0.625em;
-        border: 1px solid var(--lighter-orange);
+        border: 1px solid var(--surface-color);
     }
     .schedule-table td,
     .pricing-table td {
         display: block;
         text-align: right;
         border: none;
-        border-bottom: 1px dotted var(--lighter-orange);
+        border-bottom: 1px dotted var(--surface-color);
     }
     .schedule-table td::before,
     .pricing-table td::before {
@@ -392,7 +390,7 @@ footer a:hover {
         float: left;
         font-weight: bold;
         text-transform: uppercase;
-        color: var(--dark-text);
+        color: var(--text-primary);
     }
     .schedule-table td:last-child,
     .pricing-table td:last-child { border-bottom: 0; }
